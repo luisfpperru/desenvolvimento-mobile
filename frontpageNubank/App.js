@@ -1,31 +1,28 @@
 import React from 'react';
 import { Text, View, StyleSheet, TouchableHighlight} from 'react-native';
-import Constants from 'expo-constants'
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import {faCreditCard,faCog,faCoins,faEyeSlash,faBarcode,faUserPlus,faHandHoldingUsd,faExchangeAlt} from '@fortawesome/free-solid-svg-icons'
+import { EvilIcons, Entypo,FontAwesome5,AntDesign,FontAwesome,Feather,MaterialIcons,MaterialCommunityIcons} from '@expo/vector-icons';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.flex}>
-        <Text style={styles.text}> Olá, Luís </Text>
+      <View style={styles.flexright}>
 
             <TouchableHighlight>
             <View style={styles.smallbutton}>
-              <FontAwesomeIcon icon={faEyeSlash} size={25} color="white" />
+                <Entypo name="eye-with-line" size={24} color="white" />            
             </View>
           </TouchableHighlight>
 
           <TouchableHighlight>
               <View style={styles.smallbutton}>
-                <FontAwesomeIcon icon={faCog} size={25} color="white" />
+                <EvilIcons name="gear" size={24} color="white" />
               </View>
           </TouchableHighlight>
-
       </View>
+        <Text style={styles.text}> Olá, Luís </Text>
       <View style={styles.box}>
         <View style={styles.flex}>
-          <FontAwesomeIcon icon={faCreditCard} size={32} /> <Text style={styles.textbox}> Cartão de Crédito </Text>
+         <Entypo name="credit-card" size={30} color="#707070" /> <Text style={styles.textbox}> Cartão de Crédito </Text>
           </View>
           <Text style={styles.textbox}> Fatura fechada </Text>
           <Text style={{color:'#ff3961',fontSize:30,fontFamily: "Rotunda Bold"}}> R$ 43,63 </Text>
@@ -46,7 +43,7 @@ export default function App() {
 
       <View style={styles.box}>
         <View style={styles.flex}>
-        <FontAwesomeIcon icon={faCoins} color="#707070" size={32} /> <Text style={styles.textbox}> Conta </Text>
+        <FontAwesome5 name="coins" size={22} color="#707070" /> <Text style={styles.textbox}> Conta </Text>
         </View>
         <Text style={styles.textbox}> Saldo disponivel</Text>
         <Text style={{color:"black",fontSize:30,fontFamily: "Rotunda Bold"}}> R$ 20,80 </Text>
@@ -55,28 +52,28 @@ export default function App() {
       <View style={styles.flexbutton}>
         <TouchableHighlight activeOpacity={0.6}>
         <View style={styles.mediumbutton}>
-          <FontAwesomeIcon icon={faExchangeAlt} color="white" size={32} /> 
+          <MaterialCommunityIcons name="transfer" size={35} color="white" />
           <Text style={{color:"white"}}> Pix </Text>
         </View>
         </TouchableHighlight>
 
-        <TouchableHighlight activeOpacity={0.6}>
+        <TouchableHighlight activeOpacity={0.6} >
         <View style={styles.mediumbutton}>
-            <FontAwesomeIcon icon={faBarcode} color="white" size={32} /> 
+            <FontAwesome name="barcode" size={32} color="white" />            
             <Text style={{color:"white"}}> Pagar </Text>
           </View>
         </TouchableHighlight>
 
         <TouchableHighlight activeOpacity={0.6}>
         <View style={styles.mediumbutton}>
-            <FontAwesomeIcon icon={faUserPlus} color="white" size={32} /> 
+            <Feather name="user-plus" size={32} color="white" /> 
             <Text style={{color:"white"}}> Indicar <br/> amigos </Text>
           </View>
         </TouchableHighlight>
 
-         <TouchableHighlight activeOpacity={0.6}>
+         <TouchableHighlight activeOpacity={0.6} >
         <View style={styles.mediumbutton}>
-            <FontAwesomeIcon icon={faHandHoldingUsd} color="white" size={32} /> 
+            <MaterialIcons name="monetization-on" size={30} color="white" /> 
             <Text style={{color:"white"}}> Transferir </Text>
           </View>
         </TouchableHighlight>
@@ -88,7 +85,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Constants.statusBarHeight,
     backgroundColor: '#820ad1',
     padding: 8,
   },
@@ -96,6 +92,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     margin: 18,
+  },
+  flexright:{
+    flexDirection: "row",
+    flexWrap: "wrap",
+    margin: 18,
+    justifyContent: "flex-end"
   },
   flexbutton:{
     flexDirection: "row",
@@ -141,9 +143,12 @@ const styles = StyleSheet.create({
     padding:8,
   },
   mediumbutton:{
+    height:82,
+    width:62,
     backgroundColor:"#9128d7",
     borderRadius: 10,
     padding:8,
-    alignItems: "left"
+    alignItems: "center",
+    margin:1,
   }
 });
